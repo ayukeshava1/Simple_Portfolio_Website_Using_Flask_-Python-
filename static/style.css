@@ -1,0 +1,35 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+nav a {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+article:hover {
+    transform: scale(1.02);
+}
+
+input, textarea {
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #FFFF00;
+    outline: none;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

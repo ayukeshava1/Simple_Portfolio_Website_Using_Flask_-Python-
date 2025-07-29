@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+    <section class="py-12">
+        <h1 class="text-4xl font-bold text-center mb-8">Contact Me</h1>
+        <div class="max-w-md mx-auto">
+            <form id="contact-form" method="POST" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-lg">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-white bg-opacity-20 text-white">
+                </div>
+                <div>
+                    <label for="email" class="block text-lg">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full p-2 rounded bg-white bg-opacity-20 text-white">
+                </div>
+                <div>
+                    <label for="message" class="block text-lg">Message</label>
+                    <textarea id="message" name="message" required class="w-full p-2 rounded bg-white bg-opacity-20 text-white"></textarea>
+                </div>
+                <button type="submit" class="bg-yellow-300 text-black px-4 py-2 rounded hover:bg-yellow-400 transition duration-300">Send</button>
+            </form>
+            <div class="mt-8 text-center">
+                <h2 class="text-2xl font-semibold">Connect with Me</h2>
+                <p>Email: <a href="mailto:YOUR_EMAIL@gmail.com" class="hover:text-yellow-300">swaroopgowda252@gmail.com</a></p>
+                <p>LinkedIn: <a href="YOUR_LINKEDIN_URL" class="hover:text-yellow-300">LinkedIn Profile</a></p>
+                <p>GitHub: <a href="YOUR_GITHUB_URL" class="hover:text-yellow-300">GitHub Profile</a></p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

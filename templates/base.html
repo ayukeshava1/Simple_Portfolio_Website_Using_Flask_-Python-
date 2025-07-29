@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio - {% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen text-white">
+    <nav class="bg-black bg-opacity-50 p-4">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="{{ url_for('home') }}" class="hover:text-yellow-300 transition duration-300">Home</a></li>
+            <li><a href="{{ url_for('resume') }}" class="hover:text-yellow-300 transition duration-300">Resume</a></li>
+            <li><a href="{{ url_for('blog') }}" class="hover:text-yellow-300 transition duration-300">Blog</a></li>
+            <li><a href="{{ url_for('contact') }}" class="hover:text-yellow-300 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container mx-auto p-6">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="bg-{{ 'green' if category == 'success' else 'red' }}-500 p-4 rounded mb-4 text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
